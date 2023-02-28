@@ -25,6 +25,7 @@
 body {
   /* background: color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
   transition: 0.7s;
 }
 body * {
@@ -141,3 +142,13 @@ footer {
 
 /* Na aula Masterizando alinhamentos e alinhando posicionamentos absolutos
 Foi apresentado diversar formas de alinhamento para elementos Bloks, Inline, Flex */
+
+/* media queries */
+@media (min-width: 700px){
+  :root{
+    --bg-url: url('./assets/bg-desktop-dark.jpg');
+  }
+  .light{
+    --bg-url: url('./assets/bg-desktop-light.jpg');
+  }
+}
