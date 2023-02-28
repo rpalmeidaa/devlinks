@@ -26,7 +26,7 @@ body {
   /* background: color image repeat position/size */
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
-  transition: 0.7s;
+  transition: 0.8s;
 }
 body * {
   font-family: "Inter", sans-serif;
@@ -71,11 +71,14 @@ body * {
   z-index: 1;
   transform: translateY(-50%);
 
+  animation: slide-back 0.2s;
 }
 
 .light #switch button{
-  right: 0;
-  left:initial
+  animation: slide-in 0.2s forwards;
+}
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -108,9 +111,9 @@ ul li a {
   border-radius: 8px;
   font-weight: 400;
 
-  transition: background 0.5s;
+  transition: background 0.2s;
 }
-
+/* pseudo-selector */
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
@@ -120,6 +123,8 @@ ul li a:hover {
 #social-links {
   padding: 24px 52px;
   display: flex;
+  justify-content: center;
+
   font-size: 24px;
 }
 #social-links a {
@@ -129,7 +134,7 @@ ul li a:hover {
   padding: 16px;
 
   border-radius: 50%;
-  transition: background 0.2s;
+  transition: background 0.8s;
 }
 #social-links a:hover {
   background: var(--highlight-color);
@@ -150,5 +155,23 @@ Foi apresentado diversar formas de alinhamento para elementos Bloks, Inline, Fle
   }
   .light{
     --bg-url: url('./assets/bg-desktop-light.jpg');
+  }
+}
+
+/* animation */
+@keyframes slide-in{
+  from{
+    left:0;
+  }
+  to{
+    left: 50%;
+  } 
+}
+@keyframes slide-back{
+  from{
+    left:50%;
+  }
+  to{
+    left:0;
   }
 }
